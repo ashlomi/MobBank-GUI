@@ -33,10 +33,10 @@ pipeline {
 							customProxyPassword: '',
                             				customProxyUrl: '',
                            				customProxyUsername: '',
-                            				customServerName: 'lvntest002908.bpc.broadcom.net',
+                            				customServerName: 'lvntest002908.bpc.broadcom.net:8080',
                             				customServerPort: 8080,
                             				customTenantId: '00000000-0000-0000-0000-000000000000',
-                            				customUseSSL: true
+                            				customUseSSL: fasle
                     			],
 					releaseTokens: '{}'
 		}
