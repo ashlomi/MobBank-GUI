@@ -29,7 +29,7 @@ pipeline {
 					gitCommit: "${env.GIT_COMMIT}",
 					gitPrevSuccessfulCommit: "${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}",
 					overrideCDDConfig: [
-							customApiKey: 'eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6InN1cGVydXNlckBjYS5jb20iLCJ0ZW5hbnRJZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsInVzZXJJZCI6MSwianRpIjoiZGI1OGE4NGUtNGQ5ZC00YjQxLWI4ODQtMDA1M2MzODI2MjBlIiwiZXhwIjoxNTg5MzY3MjM0fQ.cBdHAqRUfVJ_RMjpJkiuxbYLdLrSstgxbclDgEwnbVZiqYbuwiekqclMbJPVoiwWu2nGnWLZ2_cBHPLew07dvQ',
+							customApiKey: 'eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6InN1cGVydXNlckBjYS5jb20iLCJ0ZW5hbnRJZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsInVzZXJJZCI6MSwianRpIjoiMGE4MjllNTUtYjFiMy00ZWQ4LTgwYTYtNTFjNmUzYzQ3OTNmIiwiZXhwIjoxNTg5NjQ4Mjg4fQ.mrTaJD-gPLODJ518AFyWK1Iixy3krWuvNOMD2WwVIJlxKE-wgNo56Z5rtnZQjFAPTf6HBde5mPCnZxNXS3ohhg',
 							customProxyPassword: '',
                             				customProxyUrl: '',
                            				customProxyUsername: '',
