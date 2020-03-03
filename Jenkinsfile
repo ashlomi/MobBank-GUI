@@ -26,14 +26,14 @@ pipeline {
 			
 		}
 		success { 
-			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'API-KEY')]){
+			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'APIKEY')]){
 	                	
 				sendNotificationToCDD appName: 'Mobile-GUI', 
 					appVersion:  "${env.BRANCH_NAME}", 
 					gitCommit: "${env.GIT_COMMIT}",
 					gitPrevSuccessfulCommit: "${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}",
 					overrideCDDConfig: [
-						customApiKey: ${API-KEY},
+						customApiKey: ${env.APIKEY},
 							customProxyPassword: '',
                             				customProxyUrl: '',
                            				customProxyUsername: '',
