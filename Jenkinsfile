@@ -23,17 +23,17 @@ pipeline {
     post { 
 		always { 
 			echo '----------Sending Build Notification to CDD--------------'
-			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'API-KEY')]){
-	                	sh 'echo  $API-KEY'
-			}
+			
 		}
 		success { 
-			sendNotificationToCDD appName: 'Mobile-GUI', 
+			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'API-KEY')]){
+	                	
+				sendNotificationToCDD appName: 'Mobile-GUI', 
 					appVersion:  "${env.BRANCH_NAME}", 
 					gitCommit: "${env.GIT_COMMIT}",
 					gitPrevSuccessfulCommit: "${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}",
 					overrideCDDConfig: [
-							customApiKey: 'eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6InN1cGVydXNlckBjYS5jb20iLCJ0ZW5hbnRJZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsInVzZXJJZCI6MSwianRpIjoiOTUzYzFiNmQtMWYzZS00NTJiLTk1NTQtNGUwMzM5ZGU5OTI5IiwiZXhwIjoxNTkxMDI1MDM4fQ.Z4Vec7LTLfO5glp9olmn7F8R2B08VlwKc8Dh-1zeWG6EnMASEGnYYWTBXjswVFEtnoNRZyrogIm1jzqfN8eb0Q',
+							customApiKey: $API-KEY,
 							customProxyPassword: '',
                             				customProxyUrl: '',
                            				customProxyUsername: '',
@@ -43,6 +43,7 @@ pipeline {
                             				customUseSSL: false
                     			],
 					releaseTokens: '{}'
+			}	
 		}
 	}
 }
