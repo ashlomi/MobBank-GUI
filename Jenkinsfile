@@ -1,4 +1,8 @@
 pipeline {
+    node {
+  		withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'API-KEY')])
+	    echo "*** API KEY:" $API-KEY
+    }
     agent {
         label "master"
 	}
