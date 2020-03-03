@@ -24,7 +24,7 @@ pipeline {
 		always { 
 			echo '----------Sending Build Notification to CDD--------------'
 			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'API-KEY')]){
-	                	echo  $API-KEY
+	                	sh 'echo  $API-KEY'
 			}
 		}
 		success { 
