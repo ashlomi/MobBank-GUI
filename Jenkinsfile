@@ -33,7 +33,7 @@ pipeline {
 					gitCommit: "${env.GIT_COMMIT}",
 					gitPrevSuccessfulCommit: "${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}",
 					overrideCDDConfig: [
-							customApiKey: $API-KEY,
+						customApiKey: ${API-KEY},
 							customProxyPassword: '',
                             				customProxyUrl: '',
                            				customProxyUsername: '',
