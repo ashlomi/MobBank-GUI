@@ -23,8 +23,9 @@ pipeline {
     post { 
 		always { 
 			echo '----------Sending Build Notification to CDD--------------'
-			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'API-KEY')])
-	                 echo "*** API KEY:" $API-KEY
+			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'API-KEY')]){
+	                	echo "*** API KEY:" $API-KEY
+			}
 		}
 		success { 
 			sendNotificationToCDD appName: 'Mobile-GUI', 
