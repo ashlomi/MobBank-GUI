@@ -23,9 +23,9 @@ pipeline {
     post { 
 	    	
 		always { 
-			reponame="$(echo "{$env.GIT_URL}" | sed -r 's/.+\/([^.]+)(\.git)?/\1/')"
+			echo "{$env.GIT_URL}" | sed -r 's/.+\/([^.]+)(\.git)?/\1/')"
 
-			echo '----------Sending Build Notification to CDD--------------'
+			//echo '----------Sending Build Notification to CDD--------------'
 
 		}
 		success { 
