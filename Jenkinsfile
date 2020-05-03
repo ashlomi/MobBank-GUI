@@ -23,13 +23,9 @@ pipeline {
     post { 
 	    	
 		always { 
-			//echo env.GIT_URL | sed -r 's/.+\/([^.]+)(\.git)?/\1/')
 
-			//echo '----------Sending Build Notification to CDD--------------'
-			String determineRepoName() {
-   			 return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
-			}
-
+			echo '----------Sending Build Notification to CDD--------------'
+			
 		}
 		success { 
 
@@ -54,3 +50,7 @@ pipeline {
 		}
 	}
 }
+String determineRepoName() {
+    return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
+}
+
