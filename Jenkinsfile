@@ -32,7 +32,7 @@ pipeline {
 
 			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'CDD_APIKEY')]){
 	                	
-				sendNotificationToCDD appName: "${env.GIT_REPO_NAME}" , 
+				sendNotificationToCDD appName: "${determineRepoName()}" , 
 					appVersion:  "${env.BRANCH_NAME}", 
 					gitCommit: "${env.GIT_COMMIT}",
 					gitPrevSuccessfulCommit: "${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}",
