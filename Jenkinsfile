@@ -23,10 +23,10 @@ pipeline {
     post { 
 		always { 
 			echo '----------Sending Build Notification to CDD--------------'
-			
+			env.GIT_REPO_NAME = env.GIT_URL.replaceFirst(/^.*\/([^\/]+?).git$/, '$1')
+
 		}
 		success { 
-			env.GIT_REPO_NAME = env.GIT_URL.replaceFirst(/^.*\/([^\/]+?).git$/, '$1')
 
 			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'CDD_APIKEY')]){
 	                	
