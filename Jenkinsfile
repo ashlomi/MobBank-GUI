@@ -21,9 +21,11 @@ pipeline {
 		}
 	}		
     post { 
+	    	String determineRepoName() {
+    	    	return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
+	        }
 		always { 
 			echo '----------Sending Build Notification to CDD--------------',
-			env.GIT_REPO_NAME = env.GIT_URL.replaceFirst(/^.*\/([^\/]+?).git$/, '$1')
 
 		}
 		success { 
