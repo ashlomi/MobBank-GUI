@@ -24,7 +24,8 @@ pipeline {
 	    	
 		always { 
 
-			echo '----------Sending Build Notification to CDD--------------'
+			//echo '----------Sending Build Notification to CDD--------------'
+			echo "${determineRepoName()}"
 			
 		}
 		success { 
