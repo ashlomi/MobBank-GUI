@@ -26,14 +26,16 @@ pipeline {
 			
 		}
 		success { 
-			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'APIKEY')]){
+			env.GIT_REPO_NAME = env.GIT_URL.replaceFirst(/^.*\/([^\/]+?).git$/, '$1')
+
+			withCredentials([string(credentialsId: 'CDD-Project-Mobile', variable: 'CDD_APIKEY')]){
 	                	
-				sendNotificationToCDD appName: 'Mobile-GUI', 
+				sendNotificationToCDD appName: "${env.GIT_REPO_NAME}" , 
 					appVersion:  "${env.BRANCH_NAME}", 
 					gitCommit: "${env.GIT_COMMIT}",
 					gitPrevSuccessfulCommit: "${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}",
 					overrideCDDConfig: [
-						customApiKey: "${APIKEY}",
+						customApiKey: "${CDD_APIKEY}",
 							customProxyPassword: '',
                             				customProxyUrl: '',
                            				customProxyUsername: '',
