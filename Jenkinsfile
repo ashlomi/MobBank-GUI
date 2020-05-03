@@ -25,7 +25,7 @@ pipeline {
     	    	return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
 	        }
 		always { 
-			echo '----------Sending Build Notification to CDD--------------',
+			echo '----------Sending Build Notification to CDD--------------'
 
 		}
 		success { 
