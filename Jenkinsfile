@@ -48,7 +48,7 @@ pipeline {
                         			customUseSSL: false
                   			  ],
 					actionOnCdd : "TRIGGER_RELEASE",
-					releaseTokens: '',
+						releaseTokens: '{"Token-Release-1": "100"}',
 					dslParameters: "${DSL_PARAMS}",
 					runSubset: false,
 					runTests: true,
